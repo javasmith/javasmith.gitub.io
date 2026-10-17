@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#111d29">
+  <title>Little Brown Cat Hollow · Briefly Off the Map</title>
+  <!--
+    LITTLE BROWN CAT HOLLOW | OFFLINE LANDING PAGE
+    Standalone HTML: no fonts, images, libraries, API calls, tracking or CDN.
+    Change the HOME_URL value in the script near the bottom if the primary
+    destination should be different. Only clicking Retry navigates away.
+    IMPORTANT: host this page somewhere reachable independently of Dynu.
+    If authoritative DNS for your hostname fails, an ordinary HTTP redirect
+    at that same hostname cannot be delivered to visitors.
+  -->
+  <style>
+    :root { color-scheme:dark; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    html { min-height:100%; background:#111d29; }
+    body { margin:0; min-height:100vh; color:#eaf2ed; background: radial-gradient(ellipse at 74% 19%, rgba(193,151,94,.15), transparent 31%), radial-gradient(ellipse at 8% 94%, rgba(86,139,126,.16), transparent 39%), linear-gradient(160deg, #0c1722 0%, #152638 52%, #122a2e 100%); display:grid; place-items:center; padding:40px 18px; }
+    .scene { position:fixed; inset:0; pointer-events:none; overflow:hidden; opacity:.8; }
+    .star { position:absolute; width:3px; height:3px; border-radius:50%; background:#c9e0cf; box-shadow: 0 0 14px 2px rgba(233,219,172,.23); }
+    .star:nth-child(1){top:12%;left:11%}.star:nth-child(2){top:27%;left:24%;width:2px;height:2px}.star:nth-child(3){top:15%;left:47%}.star:nth-child(4){top:8%;left:82%;width:2px;height:2px}.star:nth-child(5){top:34%;left:91%}.star:nth-child(6){top:72%;left:7%;width:2px;height:2px}.star:nth-child(7){top:81%;left:79%;width:2px;height:2px}.star:nth-child(8){top:62%;left:95%;width:2px;height:2px}
+    main { position:relative; width:min(100%, 890px); isolation:isolate; }
+    .frame { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(265px,.88fr); background:rgba(13,27,37,.9); border:1px solid rgba(218,226,196,.16); border-radius:28px; overflow:hidden; box-shadow:0 38px 115px rgba(0,0,0,.33), inset 0 1px 0 rgba(255,255,255,.035); }
+    .copy { padding:clamp(29px,5.7vw,62px) clamp(26px,5.4vw,58px); }
+    .brand { display:flex; align-items:center; gap:10px; color:#c6d7be; font-size:.74rem; font-weight:750; letter-spacing:.19em; text-transform:uppercase; }
+    .brand-mark {display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid rgba(197,215,190,.43);border-radius:10px;color:#e4c48e;font-size:1.15rem;}
+    .status { display:inline-flex; align-items:center; gap:9px; margin-top:48px; border:1px solid rgba(227,182,119,.29); border-radius:100px; padding:8px 12px; color:#f0c995; font-weight:730; font-size:.69rem; letter-spacing:.115em; text-transform:uppercase; background:rgba(182,135,74,.085); }
+    .status-dot { width:7px;height:7px;border-radius:100%;background:#f0c995;box-shadow:0 0 0 4px rgba(240,201,149,.1);}
+    h1 { margin:22px 0 17px; font-family:Georgia, "Times New Roman", serif; font-size:clamp(2.55rem,5.5vw,4.35rem);line-height:1.06;letter-spacing:-.045em;font-weight:500;max-width:500px; }
+    h1 em {font-style:normal;color:#ddae77;}
+    .lead {color:#c2d1cf;line-height:1.72;font-size:1.02rem;max-width:450px;margin:0;}
+    .actions {display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:34px;}
+    .button { min-height:46px;padding:13px 19px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:10px;text-decoration:none;font-size:.89rem;font-weight:750;transition:transform .2s ease,background .2s ease,box-shadow .2s ease;}
+    .button:hover{transform:translateY(-2px)}.button:focus-visible,summary:focus-visible{outline:3px solid #f0c995;outline-offset:4px}
+    .primary{color:#10202a;background:#e4bf88;box-shadow:0 6px 22px rgba(205,148,77,.14)}.primary:hover{background:#f0cf9e}
+    .subtext {font-size:.79rem;color:#899d9e; margin-top:29px;line-height:1.6;max-width:380px;}
+    .art {min-height:500px;position:relative;display:grid;place-items:center;overflow:hidden;border-left:1px solid rgba(218,226,196,.1);background:radial-gradient(circle at 51% 39%,rgba(241,189,115,.17),transparent 42%),linear-gradient(158deg,rgba(43,70,69,.19),rgba(39,37,38,.11));}
+    .moon{position:absolute;top:15%;right:16%;width:111px;height:111px;border-radius:100%;background:#f1d7a4;box-shadow:0 0 0 19px rgba(239,205,149,.05),0 0 95px rgba(242,200,142,.13)}
+    .ridge,.ridge2{position:absolute;bottom:-20%;width:156%;height:48%;border-radius:50% 50% 0 0;background:#183b37;transform:rotate(-14deg);left:-26%;}.ridge2{height:33%;bottom:-17%;background:#102e30;left:15%;transform:rotate(12deg)}
+    svg.cat{z-index:1;position:relative;width:min(78%,285px);height:auto;filter:drop-shadow(0 22px 24px rgba(0,0,0,.27));transform:translate(-4%,32px)}
+    .leaf{position:absolute;width:8px;height:3px;border-radius:100%;background:#a4b48d;opacity:.45;transform:rotate(-28deg)}.leaf.l1{bottom:22%;left:15%}.leaf.l2{bottom:14%;right:18%}.leaf.l3{bottom:28%;right:6%}
+    .art-caption{z-index:2;position:absolute;bottom:31px;left:30px;right:30px;text-align:center;letter-spacing:.2em;font-size:.65rem;font-weight:750;color:#9ebbb4;text-transform:uppercase;}
+    .below{display:flex;align-items:start;justify-content:space-between;gap:20px;padding:24px 12px 0;}
+    .motto{font-family:Georgia,serif;font-size:1.05rem;font-style:italic;color:#b9c9c4;}
+    details{max-width:350px;color:#9bb1ae;font-size:.83rem;line-height:1.65;}summary{cursor:pointer;color:#d9c29f;font-weight:750;list-style:revert;} details p{margin:8px 0 0}
+    footer{margin-top:17px;text-align:center;color:#6f8c8b;font-size:.7rem;letter-spacing:.09em}
+    @media(max-width:710px){body{padding:20px 13px}.frame{grid-template-columns:1fr}.copy{padding:33px 29px}.status{margin-top:30px}.art{order:-1;min-height:260px;border-left:0;border-bottom:1px solid rgba(218,226,196,.1)}.moon{width:75px;height:75px;top:10%;right:24%}.cat{max-height:230px}.art-caption{bottom:18px}.below{padding:21px 7px 0;flex-direction:column;gap:16px}h1{font-size:clamp(2.45rem,10vw,3.6rem)} }
+    @media(prefers-reduced-motion:reduce){.button{transition:none}.button:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <div class="scene" aria-hidden="true"><i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i></div>
+  <main>
+    <section class="frame" aria-labelledby="headline">
+      <div class="copy">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span> Little Brown Cat Hollow</div>
+        <div class="status"><span class="status-dot" aria-hidden="true"></span> Temporarily off the map</div>
+        <h1 id="headline">The cat is here.<br><em>The address wandered off.</em></h1>
+        <p class="lead">You've reached the right place at a slightly wrong moment. The path back to the Hollow is taking an unscheduled stroll through the network.</p>
+        <p class="lead" style="margin-top:13px">Our resident cat is overseeing the situation. Management is, as usual, mostly asleep.</p>
+        <div class="actions"><a class="button primary" id="retry-link" href="https://littlebrowncat.com/">↻ &nbsp; Try the Hollow again</a></div>
+        <p class="subtext">No need to change your settings. Try again shortly, or come back once the network has remembered where we live.</p>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="moon"></div><div class="ridge"></div><div class="ridge2"></div>
+        <svg class="cat" viewBox="0 0 320 350" role="img" aria-label="Silhouette of a brown cat watching the moon" xmlns="http://www.w3.org/2000/svg">
+          <path d="M220 302 C311 302 302 202 272 202 C251 202 267 220 269 240 C272 274 244 284 229 273" fill="none" stroke="#63432c" stroke-width="23" stroke-linecap="round"/>
+          <path d="M84 159 L83 79 L123 103 Q161 81 193 104 L230 75 L231 160 Q258 177 252 212 L241 301 Q241 329 212 329 L101 329 Q74 329 75 301 L64 216 Q60 179 84 159 Z" fill="#745036"/>
+          <path d="M95 132 L95 96 L122 116 Z M198 116 L219 95 L218 132 Z" fill="#ba835e"/>
+          <ellipse cx="124" cy="179" rx="11" ry="14" fill="#f1cf8f"/><ellipse cx="192" cy="179" rx="11" ry="14" fill="#f1cf8f"/>
+          <ellipse cx="126" cy="180" rx="3" ry="12" fill="#2b2b28"/><ellipse cx="191" cy="180" rx="3" ry="12" fill="#2b2b28"/>
+          <path d="M149 205 Q157 211 165 205 L157 217 Z" fill="#dca486"/>
+          <path d="M157 218 Q145 231 135 222 M157 218 Q170 231 180 222" fill="none" stroke="#e0b79b" stroke-width="3" stroke-linecap="round"/>
+          <path d="M141 209 L90 200 M141 217 L84 220 M174 209 L224 200 M174 217 L228 220" fill="none" stroke="#d8b99e" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M108 302 Q117 265 124 245 M205 303 Q196 266 192 246" fill="none" stroke="#916444" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+        </svg>
+        <span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span>
+        <div class="art-caption">All paths eventually lead to the Hollow</div>
+      </div>
+    </section>
+    <div class="below">
+      <div class="motto">The cat is not lost. The address book is.</div>
+      <details><summary>What's happening?</summary><p>This is a friendly fallback page, not a live diagnostic. DNS, internet connectivity, or routing may be temporarily unavailable. The main site can be retried with the button above.</p></details>
+    </div>
+    <footer>Little Brown Cat Hollow · A very small detour in a very large internet · Upward &amp; Onward</footer>
+  </main>
+  <script>
+    // Set this to the public URL you want visitors to try again.
+    // No automatic redirect: a broken origin should not cause a redirect loop.
+    const HOME_URL = 'https://littlebrowncat.com/';
+    document.getElementById('retry-link').href = HOME_URL;
+  </script>
+</body>
+</html>
